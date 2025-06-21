@@ -7,8 +7,10 @@ import java.util.List;
 public class ImmutablePractise {
     public static void main(String[] args) {
         List<String> skill = new ArrayList<>();
+//        int num = 0;
         skill.add("Java");
         skill.add("python");
+        Object o = new Object();
         Employee emp = new Employee("Ranjith",skill);
         emp.getSkills().add("c#");
         for (int i=0;i<emp.getSkills().size();i++){
