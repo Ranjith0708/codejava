@@ -1,0 +1,77 @@
+Custom Generic List Implementation with Iterator Pattern
+================================================
+
+This document explains the implementation of MyGenericList<T>, a custom generic list that implements the Iterable interface.
+
+Key Components:
+--------------
+
+1. Main Class: MyGenericList<T>
+   - Implements Iterable<T> interface
+   - Uses generic type T for type safety
+   - Internal structure:
+     * T[] elements - backing array
+     * int size - current number of elements
+   
+2. Core Methods:
+   - Constructor:
+     * Initializes empty array with capacity of 100
+     * Uses type casting: (T[])new Object[100]
+   
+   - add(T element):
+     * Adds element if space available
+     * Returns boolean for success/failure
+     * Handles array bounds checking
+   
+   - get(int index):
+     * Returns element at specified index
+     * Throws IndexOutOfBoundsException for invalid index
+     * Ensures index < size
+   
+   - getSize():
+     * Returns current number of elements
+
+3. Iterator Implementation:
+   - Private inner class: MyGenericListIterator
+   - Implements Iterator<T> interface
+   - Fields:
+     * Reference to parent list
+     * Current index
+   
+   - Methods:
+     * hasNext(): Checks if more elements exist
+     * next(): Returns current element and moves to next
+
+Usage Example:
+-------------
+MyGenericList<String> list = new MyGenericList<>();
+list.add("Hello");
+list.add("World");
+
+// Using for-each loop (enabled by Iterable)
+for(String item : list) {
+    System.out.println(item);
+}
+
+// Using iterator directly
+Iterator<T> iterator = list.iterator();
+while(iterator.hasNext()) {
+    T item = iterator.next();
+    // Process item
+}
+
+Key Points to Remember:
+---------------------
+1. Array casting is needed because Java doesn't allow generic array creation
+2. Size tracking is separate from array length
+3. Inner iterator class has access to outer class's private members
+4. Implements Iterable for enhanced for-loop support
+5. Thread safety not implemented - not synchronized
+
+Implementation Benefits:
+----------------------
+1. Type safety through generics
+2. Standard iteration pattern support
+3. Bounds checking for safe access
+4. Simple and efficient array-based storage
+5. Easy to use with for-each loops
