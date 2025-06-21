@@ -71,3 +71,42 @@ We can make a Java class serializable by implementing the `Serializable` interfa
   - Jackson (JSON)
 - Keep objects lightweight
 - Consider compression (e.g., GZIP)
+
+## 7. What is singleton pattern in java?
+Singleton pattern is one of the design pattern in jav where we allow class to create only one instance of it in the application and providing global access to it.
+ * How to implement singleton pattern in java?
+We can create singleton pattern by making private constructor,static instace fields and creating public method to return the instance.
+ * uses : 
+    its used in logging,caching and configuration management
+## 8. How to make singleton a thread safe?
+We use syncronized in method to make singleton to accessible for one thread.
+We can use double checked locking to reduce synchronization overhead
+We use Enum singleton also that ensures thread safety efficiently.
+
+## 9. What is hashcode equals contract? Why its important?
+If two object are equal they must have same hashcode.It ensures correct behaviour in hashmap,hashset and hashtable.And improves performance in hash based collections.
+
+## 10. Fail-Fast and Fail-Safe iterator: 
+While you iterating over the collection when you try to add some element to it that will throw concurrent modification exception.that is called fail-fast iterator.
+Eg: ArrayList,List,Hashmap.
+while iterating when you try to add new data it will add to the collection without any error but it will not iterate through newly added data.
+Eg : ConcurrentHashMap,CopyOnWriteArrayList.
+
+## 11.How do you handle global exception in spring boot application?
+@ControllerAdvice → Tells Spring this class handles exceptions globally for all controllers.
+@ExceptionHandler → Marks which exception to handle.
+@RestControllerAdvice is a specialized version of @ControllerAdvice that combines:
+@ControllerAdvice (for global exception handling)
+and
+@ResponseBody (to automatically return JSON or other REST-compatible responses)
+
+## 12.what is the difference between arraylist and linkedlist when would you use over the other?
+when i want to add element at end and need quick access for elemnent using index and dont want to do more insertion and deletion especially in middle or start means i will go with arraylist.
+if i want to insert/delete effectively without bothering about accessing it i will go with linkedlist.
+
+## 13.if you need to implement a queue that frequently adds and removes element from both side which list you will use?
+LinkedList- because it implements deque interface which supports addfirst ,addlast,removefirst,removelast with o(1) time complexity.
+## 14.No unique bean definition exception
+## 15.@Qualifier annotaitons use case:
+it uses when multiple implementation of same class is there but there is no implementation for parent class. 
+
