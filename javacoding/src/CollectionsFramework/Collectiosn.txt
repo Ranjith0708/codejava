@@ -1,0 +1,72 @@
+Collection is an interface in java .All the collections has implement this collection interface.
+Collection extends iterable which has iterator. This iterator enables looping through collections.
+Map will not comes under collection.It is not extends collection interface as well.
+
+Some common methods in collection interface : 
+    boolean containsAll(Collection<?> c)
+    boolean addAll(Collection<?> c)
+    boolean removeAll(Collection<?> c)
+    boolean retainAll(Collection<?> c)
+    void clear()
+    boolean contains(Object o);
+    int size();
+    boolean isEmpty();
+
+List : 
+ - List is interface extends collection interface
+ - This maintains elemenets in order wise and may have duplicates
+ - Each elemenets are postion based starting index from 0
+ 
+Methods Present in List : 
+  -E get(int index)
+  -E set(int index,E element)
+  -void add(int index,E elemenet)
+  -boolean addAll(Collections<? extends E> c)
+  -boolean remove(int index)
+  - toArray(new Integer[0])-> its recomended to pass size of list of start with
+   size of arr as 0 like [0] this ensures the 
+ArrayList implements List : 
+  -Its an dynamic array
+  -To be used when we dont know the what is going on in the size of array
+  -Internally it implements using array,set to some default capacity
+  -When the capacity of array is reached (50% of its size),
+    it will create new array of bigger size(50% of its current capacity)
+     and copies all elements from old array to new array.
+  -Reference will be internally pointed to new array.
+    Old array was removed from memory using garbage collectors
+Vector class : 
+    -Implements list
+    -Same as ArrayList this also has resizable arrays,provides fast random access
+    -list traversal -indexed traversal very much like normal array
+    -Unlike ArrayList Vectors are thread safe.Means concurrent calls 
+        to vectors will not be compramised its integraty
+LinkedList : 
+    -Implements List and Deque
+    -Its implemented as doubly LinkedList
+    -Interstions and deletions in this doubly linked list is very efficient
+
+ArrayList vs LinkedList:
+    Position based access : Constant time for arraylist and vectors , Linear time for LinkedList
+    Inerstions adn deletions : Frequent deletions and insertions in LinkedList takes constant time.
+                                Where in arraylist needs line time to deletion and insertion 
+                                bcoz of shifting the indexes of elements.
+Note : It we pass list in constructor of Arraylist it will create copy and assign it to new object.
+        But if you do sublist and assign to new object. Any modifications to new obj will alter original.
+        Because siblist is not creating array its just showing output of mentioned index.
+ListIterator : 
+    - Listiterator is an interface in java it used in collection to traverse in anydirections
+    (front and back wards).
+
+    - Listiterator is bidirectional iterator for lists which implements iterator.
+    - Which has next() and prev() method to do bidirectional iteraions.
+
+    interface ListIterator<E> extends Iterator<E>{
+        boolean hasNext()
+        boolean hasPrevious()
+        E next() //Element after the cursor
+        E previous() //Element previous to the cursor
+    }
+
+List provides two ListIterator methods :
+    -ListIterator<E> listiterator()
+    -ListIterator<E> listiterator(int index)

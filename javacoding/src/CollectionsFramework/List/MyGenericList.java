@@ -1,4 +1,4 @@
-package Practise;
+package DataStructures.List;
 
 import java.util.Iterator;
 

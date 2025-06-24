@@ -1,4 +1,4 @@
-import Practise.MyGenericList;
+import CollectionsFramework.List.MyGenericList;
 
 import java.util.Iterator;
 
